@@ -73,7 +73,6 @@ stdin, stdout, stderr = client.exec_command('python')
 
 # Send data via STDIN, and shutdown when done
 stdin.write('open("tester.txt", "w").write("Congratulations! You have been PWNed :) ")')
-# 'open("tester.txt", "a").write("Oh shit again? GANG")')
 stdin.channel.shutdown_write()
 
 # Print output of command. Will wait for command to finish.
