@@ -1,4 +1,4 @@
-# SSH-Cracker
+# SSH Brute Force Tool
 
 Brute Force SSH Cracking Tool
 
