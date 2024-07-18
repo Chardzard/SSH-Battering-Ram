@@ -77,7 +77,7 @@ for password in file:
     if ssh_session(this_host, this_port, this_user, password):
         print("\n\n[+] Credentials Found! Password is " + password + " . . . saving to 'credentials.txt' in current working directory")
         print()
-        open("credentials.txt", "w").write("Password: " + password)
+        open("credentials.txt", "w").write("{GREEN}Password: " + password + "\n")
         final_credentials = password
         break
 
