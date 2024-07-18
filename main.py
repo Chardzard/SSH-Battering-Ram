@@ -9,6 +9,21 @@ from colorama import init, Fore
 init()
 GREEN = Fore.GREEN
 RED = Fore.RED
+BLUE = Fore.BLUE
+
+print(f"""{BLUE}
+ /$$$$$$$              /$$     /$$                         /$$                             /$$$$$$$                         
+| $$__  $$            | $$    | $$                        |__/                            | $$__  $$                        
+| $$  \ $$  /$$$$$$  /$$$$$$ /$$$$$$    /$$$$$$   /$$$$$$  /$$ /$$$$$$$   /$$$$$$         | $$  \ $$  /$$$$$$  /$$$$$$/$$$$ 
+| $$$$$$$  |____  $$|_  $$_/|_  $$_/   /$$__  $$ /$$__  $$| $$| $$__  $$ /$$__  $$ /$$$$$$| $$$$$$$/ |____  $$| $$_  $$_  $$
+| $$__  $$  /$$$$$$$  | $$    | $$    | $$$$$$$$| $$  \__/| $$| $$  \ $$| $$  \ $$|______/| $$__  $$  /$$$$$$$| $$ \ $$ \ $$
+| $$  \ $$ /$$__  $$  | $$ /$$| $$ /$$| $$_____/| $$      | $$| $$  | $$| $$  | $$        | $$  \ $$ /$$__  $$| $$ | $$ | $$
+| $$$$$$$/|  $$$$$$$  |  $$$$/|  $$$$/|  $$$$$$$| $$      | $$| $$  | $$|  $$$$$$$        | $$  | $$|  $$$$$$$| $$ | $$ | $$
+|_______/  \_______/   \___/   \___/   \_______/|__/      |__/|__/  |__/ \____  $$        |__/  |__/ \_______/|__/ |__/ |__/
+                                                                         /$$  \ $$                                          
+                                                                        |  $$$$$$/                                          
+                                                                         \______/
+""")
 
 # Set final password as an empty string here
 # to ensure it is global and can be used later
@@ -60,7 +75,7 @@ this_file = args.password_file
 file = open(this_file, "r").read().splitlines()
 for password in file:
     if ssh_session(this_host, this_port, this_user, password):
-        print("\n[+] Credentials Found! Password is " + password + ", saving to file in directory program was ran from")
+        print("\n[+] Credentials Found! Password is " + password + " . . . saving to 'credentials.txt' in current working directory")
         print()
         open("credentials.txt", "w").write("Password: " + password)
         final_credentials = password
